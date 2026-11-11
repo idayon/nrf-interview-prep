@@ -89,6 +89,38 @@ td[contenteditable]:empty::before{content:"직접 확인 후 입력";color:var(-
 .use{margin:10px 0 0;padding:8px 12px;border-left:3px solid var(--accent);font-size:.92rem;background:var(--accent-soft);border-radius:0 8px 8px 0}
 .src{margin:8px 0 0;font-size:.82rem;color:var(--sub)}
 .src a{color:var(--accent)}
+#mview{flex:none;border:1.5px solid var(--accent);background:var(--card);color:var(--accent);font:inherit;
+  font-size:.86rem;font-weight:700;padding:5px 12px;border-radius:8px;cursor:pointer;white-space:nowrap}
+/* 모바일 보기 */
+body.m{font-size:15.5px}
+body.m .wrap{max-width:480px;padding:0 14px 96px}
+body.m header{padding:22px 0 10px}
+body.m h1{font-size:1.4rem}
+body.m h2{font-size:1.15rem;margin-top:34px;scroll-margin-top:12px}
+body.m nav{position:fixed;top:auto;bottom:0;left:0;right:0;z-index:20;background:var(--card);
+  border-top:1px solid var(--line);border-bottom:0;padding:8px 10px calc(8px + env(safe-area-inset-bottom));
+  gap:6px;box-shadow:0 -4px 14px rgba(0,0,0,.08);scrollbar-width:none}
+body.m nav::-webkit-scrollbar{display:none}
+body.m nav a{padding:9px 13px;background:var(--bg);font-size:.88rem}
+body.m #mview{padding:9px 13px;background:var(--accent);color:var(--card);border-color:var(--accent)}
+body.m .grid,body.m .cols{grid-template-columns:1fr}
+body.m .card,body.m .issue{padding:14px}
+body.m .tools{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+body.m .tools::-webkit-scrollbar{display:none}
+body.m .chip{flex:none;padding:9px 15px}
+body.m #q{flex:none;width:170px}
+body.m .btn{flex:none;margin-left:0}
+body.m details.topic>summary{padding:15px 14px}
+body.m .stars{display:none}
+body.m .check li{padding:12px 0}
+body.m .check input{width:22px;height:22px}
+body.m table,body.m tbody,body.m tr,body.m td{display:block;width:100%}
+body.m thead{display:none}
+body.m table{background:none;border-radius:0}
+body.m tr{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:12px 14px}
+body.m td{border:0;padding:3px 0}
+body.m td:first-child{font-weight:700;font-size:1rem;color:var(--accent)}
+body.m td[contenteditable]{margin-top:6px;padding:8px 10px;border:1px dashed var(--line);border-radius:8px;min-height:38px}
 footer{margin-top:50px;color:var(--sub);font-size:.82rem;border-top:1px solid var(--line);padding-top:16px}
 .empty{color:var(--sub);text-align:center;padding:30px 0;display:none}
 @media print{nav,.tools{display:none}details.topic{break-inside:avoid}body{background:#fff}}
@@ -103,6 +135,7 @@ footer{margin-top:50px;color:var(--sub);font-size:.82rem;border-top:1px solid va
 </header>
 
 <nav>
+  <button id="mview" type="button">📱 모바일로 보기</button>
   <a href="#news">최근 이슈</a>
   <a href="#biz">주요 사업</a>
   <a href="#ict">ICT·융합</a>
@@ -591,6 +624,13 @@ const pv=load("nrf-plan");
 document.getElementById("plans").innerHTML=PLAN.map((p,i)=>
  '<li><input type="checkbox" id="p'+i+'"'+(pv[i]?" checked":"")+'><span><b>'+p[0]+"</b> · "+p[1]+"</span></li>").join("");
 document.querySelectorAll("#plans input").forEach((c,i)=>c.onchange=()=>{pv[i]=c.checked;save("nrf-plan",pv);});
+
+const mv=document.getElementById("mview");
+function setM(on){document.body.classList.toggle("m",on);mv.textContent=on?"🖥 PC로 보기":"📱 모바일로 보기";}
+let pref=null;try{pref=localStorage.getItem("nrf-view")}catch(e){}
+setM(pref?pref==="m":window.innerWidth<=640);
+mv.onclick=()=>{const on=!document.body.classList.contains("m");setM(on);
+  try{localStorage.setItem("nrf-view",on?"m":"pc")}catch(e){}};
 
 const d=Math.ceil((new Date(2026,10,17)-new Date(new Date().toDateString()))/864e5);
 document.getElementById("dday").textContent=d>0?"시험까지 D-"+d:d===0?"오늘이 시험일 · 화이팅":"시험 종료";
