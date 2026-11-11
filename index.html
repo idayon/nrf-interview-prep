@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>한국연구재단 다차원 전형 대비 노트</title>
+<style>
+:root{
+  --bg:#f6f7f9;--card:#fff;--ink:#1a1f2b;--sub:#5b6474;--line:#e3e6ec;
+  --accent:#1f5fd1;--accent-soft:#e8f0fe;
+  --pt:#1f5fd1;--debate:#b4470f;--team:#0f7a55;--essay:#7a3fb8;
+  --warn-bg:#fff7e0;--warn-line:#f0d98a;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#12151b;--card:#1b2029;--ink:#e8ebf1;--sub:#9aa3b3;--line:#2c3340;
+  --accent:#7aa7ff;--accent-soft:#1d2b47;
+  --pt:#7aa7ff;--debate:#f0a070;--team:#5fd1a4;--essay:#c49bf0;
+  --warn-bg:#2b2616;--warn-line:#5a4d1f;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  line-height:1.65;font-size:16px;word-break:keep-all}
+.wrap{max-width:920px;margin:0 auto;padding:0 16px 80px}
+header{padding:40px 0 20px}
+h1{font-size:clamp(1.5rem,4.5vw,2.1rem);margin:0 0 6px;letter-spacing:-.02em}
+.lead{color:var(--sub);margin:0}
+.dday{display:inline-block;margin-top:14px;padding:6px 14px;border-radius:999px;
+  background:var(--accent);color:#fff;font-weight:700;font-size:.95rem}
+@media (prefers-color-scheme:dark){.dday{color:#10131a}}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;
+  display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;color:var(--sub);font-size:.9rem;font-weight:600;
+  padding:6px 12px;border-radius:8px}
+nav a:hover{background:var(--accent-soft);color:var(--accent)}
+h2{font-size:1.25rem;margin:44px 0 6px;letter-spacing:-.01em}
+.h2sub{color:var(--sub);font-size:.92rem;margin:0 0 16px}
+.note{background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:10px;
+  padding:12px 16px;font-size:.92rem;margin:18px 0}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;align-items:center}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);
+  padding:7px 14px;border-radius:999px;font:inherit;font-size:.88rem;font-weight:600;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+#q{flex:1 1 180px;min-width:0;padding:8px 14px;border-radius:999px;border:1px solid var(--line);
+  background:var(--card);color:var(--ink);font:inherit;font-size:.9rem}
+.btn{margin-left:auto;border:0;background:none;color:var(--accent);font:inherit;
+  font-size:.86rem;font-weight:600;cursor:pointer;padding:6px}
+details.topic{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  margin:10px 0;overflow:hidden;border-left:5px solid var(--c)}
+details.topic>summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+details.topic>summary::-webkit-details-marker{display:none}
+.tag{flex:none;font-size:.74rem;font-weight:800;color:var(--c);border:1.5px solid var(--c);
+  border-radius:6px;padding:1px 7px;margin-top:3px;white-space:nowrap}
+.ttl{font-weight:700;flex:1;min-width:0}
+.ttl small{display:block;font-weight:400;color:var(--sub);font-size:.86rem;margin-top:2px}
+.stars{flex:none;color:#e0a100;font-size:.85rem;margin-top:2px;letter-spacing:1px}
+.body{padding:2px 16px 16px;border-top:1px dashed var(--line)}
+.body h4{font-size:.82rem;color:var(--c);margin:16px 0 4px;text-transform:none;letter-spacing:.02em}
+.body p{margin:0}
+.body ul{margin:0;padding-left:1.15em}
+.body li{margin:3px 0}
+.one{background:var(--accent-soft);border-radius:8px;padding:10px 12px;font-weight:600}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:600px){.cols{grid-template-columns:1fr}.stars{display:none}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.card h3{margin:0 0 8px;font-size:1rem}
+.card ol,.card ul{margin:0;padding-left:1.2em;font-size:.93rem}
+.card li{margin:4px 0}
+.check{list-style:none;padding:0;margin:0}
+.check li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.check li:last-child{border:0}
+.check input{width:18px;height:18px;margin-top:4px;flex:none;accent-color:var(--accent)}
+.check input:checked+span{color:var(--sub);text-decoration:line-through}
+.check b{color:var(--accent)}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.92rem;background:var(--card);border-radius:12px;overflow:hidden}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);white-space:nowrap}
+td[contenteditable]{min-width:140px;color:var(--accent);font-weight:600}
+td[contenteditable]:empty::before{content:"직접 확인 후 입력";color:var(--sub);font-weight:400}
+footer{margin-top:50px;color:var(--sub);font-size:.82rem;border-top:1px solid var(--line);padding-top:16px}
+.empty{color:var(--sub);text-align:center;padding:30px 0;display:none}
+@media print{nav,.tools{display:none}details.topic{break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>한국연구재단 다차원 전형 대비 노트</h1>
+  <p class="lead">예상 주제 16개와 답안 뼈대 · 발표/토론 요령 · 5일 체크리스트</p>
+  <span class="dday" id="dday"></span>
+</header>
+
+<nav>
+  <a href="#topics">예상 주제</a>
+  <a href="#frame">답변 틀</a>
+  <a href="#behave">행동 요령</a>
+  <a href="#nums">외울 수치</a>
+  <a href="#plan">5일 계획</a>
+</nav>
+
+<div class="note">
+  <b>읽기 전에.</b> 여기 있는 주제는 재단의 최근 현안에서 뽑은 <b>예상</b>이며 실제 출제와 다를 수 있습니다.
+  답안 뼈대는 외우는 용도가 아니라 방향을 잡는 용도입니다. 수치와 제도 세부 내용은 과기정통부·교육부 보도자료와 재단 홈페이지에서 직접 확인한 뒤 사용하세요.
+</div>
+
+<section id="topics">
+  <h2>예상 주제</h2>
+  <p class="h2sub">제목을 누르면 답안 뼈대가 열립니다. ★은 출제 가능성에 대한 주관적 추정입니다.</p>
+  <div class="tools">
+    <button class="chip" data-f="all" aria-pressed="true">전체</button>
+    <button class="chip" data-f="pt" aria-pressed="false">발표(PT)</button>
+    <button class="chip" data-f="debate" aria-pressed="false">토론</button>
+    <button class="chip" data-f="team" aria-pressed="false">팀 과제</button>
+    <button class="chip" data-f="essay" aria-pressed="false">논술</button>
+    <input id="q" type="search" placeholder="키워드 검색 (예: AI, 평가)" aria-label="주제 검색">
+    <button class="btn" id="toggle">모두 펼치기</button>
+  </div>
+  <div id="list"></div>
+  <p class="empty" id="empty">조건에 맞는 주제가 없습니다.</p>
+</section>
+
+<section id="frame">
+  <h2>답변 틀</h2>
+  <p class="h2sub">어떤 주제가 나와도 이 순서로 채우면 뼈대가 섭니다.</p>
+  <div class="grid">
+    <div class="card"><h3>발표(PT) 3~5분</h3><ol>
+      <li><b>결론 한 문장</b> — "저는 ○○를 제안합니다."</li>
+      <li><b>현황과 문제</b> — 자료에서 수치 1~2개 인용</li>
+      <li><b>원인</b> — 제도 / 인력 / 예산 중 무엇인지</li>
+      <li><b>개선안 3개</b> — 단기·중기로 구분</li>
+      <li><b>기대효과와 한계</b> — 부작용과 보완책까지</li>
+    </ol></div>
+    <div class="card"><h3>토론 발언 30~40초</h3><ol>
+      <li>앞 사람 의견 한 줄 요약</li>
+      <li>동의 지점 먼저, 그다음 다른 관점</li>
+      <li>근거 하나 (자료 또는 사례)</li>
+      <li>"그래서 ○○로 정리하면 어떨까요"로 마무리</li>
+    </ol></div>
+    <div class="card"><h3>준비 시간 30분 쓰는 법</h3><ol>
+      <li>5분 — 자료 훑고 질문이 요구하는 것 표시</li>
+      <li>5분 — 결론과 근거 3개 먼저 확정</li>
+      <li>15분 — 개요 작성 (문장 말고 키워드)</li>
+      <li>5분 — 첫 문장과 끝 문장만 소리 없이 리허설</li>
+    </ol></div>
+    <div class="card"><h3>꼬리질문 대응</h3><ul>
+      <li>"예산이 없다면?" → 우선순위와 시범사업으로 답</li>
+      <li>"현장이 반발하면?" → 의견수렴 절차와 단계 도입</li>
+      <li>"효과를 어떻게 재나?" → 측정 지표 1개 제시</li>
+      <li>모르면 "확인이 필요하지만 방향은 ○○"로 솔직하게</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="behave">
+  <h2>행동 요령</h2>
+  <p class="h2sub">다차원 전형은 결과물보다 과정에서의 행동을 관찰합니다.</p>
+  <div class="grid">
+    <div class="card"><h3>점수가 되는 행동</h3><ul>
+      <li>논의 초반에 진행 순서와 시간 배분 제안</li>
+      <li>흩어진 의견을 중간에 한 번 정리</li>
+      <li>말이 적은 조원에게 의견 묻기</li>
+      <li>남의 아이디어를 발전시켜 공을 돌리기</li>
+      <li>마감 3분 전 결론 확인</li>
+    </ul></div>
+    <div class="card"><h3>감점이 되는 행동</h3><ul>
+      <li>말 끊기, 같은 주장 반복</li>
+      <li>발언 독점 또는 끝까지 침묵</li>
+      <li>근거 없이 "제 생각에는"만 반복</li>
+      <li>상대를 이기려는 태도</li>
+      <li>자료에 없는 수치를 지어내기</li>
+    </ul></div>
+    <div class="card"><h3>재단 직원다운 관점</h3><ul>
+      <li>연구자는 고객, 세금은 재원 — 둘 다 고려</li>
+      <li>공정성·투명성을 판단 기준 첫 줄에</li>
+      <li>"지원하되 간섭은 줄인다"는 균형</li>
+      <li>정책 결정은 부처, 재단은 기획·평가·관리 전문기관</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="nums">
+  <h2>외울 수치</h2>
+  <p class="h2sub">오른쪽 칸을 눌러 직접 확인한 값을 적어 두세요. 이 브라우저에만 저장됩니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>항목</th><th>확인할 곳</th><th>내가 확인한 값</th></tr></thead>
+    <tbody id="numrows"></tbody>
+  </table></div>
+</section>
+
+<section id="plan">
+  <h2>5일 계획</h2>
+  <p class="h2sub">체크 상태는 이 브라우저에 저장됩니다.</p>
+  <div class="card"><ul class="check" id="plans"></ul></div>
+</section>
+
+<footer>
+  개인 학습용 정리 자료입니다. 한국연구재단의 공식 자료가 아니며, 내용의 정확성은 공식 공고와 보도자료로 확인해야 합니다.
+</footer>
+</div>
+
+<script>
+const KIND={pt:["발표","--pt"],debate:["토론","--debate"],team:["팀 과제","--team"],essay:["논술","--essay"]};
+const T=[
+{k:"pt",s:3,t:"기초연구 생태계 복원을 위한 재단의 역할",d:"예산 삭감 이후 복원 국면에서 무엇을 우선할 것인가",
+ why:"최근 가장 큰 현안. 예산·과제 수가 다시 늘어나는 시기라 '늘어난 예산을 어떻게 잘 쓸 것인가'로 물을 가능성이 높음.",
+ one:"예산 복원을 넘어, 연구자가 예측할 수 있는 안정적 지원 구조를 만드는 것이 핵심입니다.",
+ a:["과제가 갑자기 끊기면 연구실 인력(대학원생·박사후연구원)이 먼저 흩어진다","선정률이 낮으면 연구보다 제안서 작성에 시간이 쏠린다","기초연구는 성과가 늦게 나오므로 지원의 연속성이 곧 품질이다"],
+ b:["소규모 과제 저변 확대와 적정 선정률 유지","계속과제 연구비의 안정적 보장 원칙 명문화","성장단계별 지원으로 과제 간 끊김 최소화","현장 간담회 상시화로 수요 기반 기획"],
+ q:["저변 확대와 우수 연구 집중 중 하나만 고른다면?","예산이 다시 줄면 무엇부터 지키겠는가?","복원의 성과를 무엇으로 측정할 것인가?"]},
+{k:"pt",s:3,t:"도전적·혁신적 연구를 촉진하는 평가제도 개선",d:"실패 가능성이 높은 연구를 어떻게 뽑고 평가할 것인가",
+ why:"도전형 과제 신설, '의미 있는 도전을 위한 가이드라인'이 현장 간담회 의제로 다뤄짐.",
+ one:"안전한 과제가 유리한 평가 구조를 바꾸려면 선정·중간·최종 평가 기준을 도전형에 맞게 따로 설계해야 합니다.",
+ a:["기존 평가는 실현 가능성과 과거 실적 비중이 커서 무난한 과제가 유리하다","실패 시 불이익 우려가 연구자의 목표를 낮춘다","평가위원도 탈락시킨 책임보다 선정한 책임을 더 부담스러워한다"],
+ b:["도전형은 아이디어의 독창성·파급력 중심 평가지표 적용","성실 수행이 확인되면 목표 미달이어도 불이익 없음을 명확히","과정 중심 평가와 목표 변경(무빙 타겟) 허용","실패 사례와 데이터도 성과로 축적·공유"],
+ q:["성실한 실패와 불성실한 실패를 어떻게 구분하나?","세금 낭비라는 비판에는 어떻게 답하나?","평가위원의 보수성은 어떻게 바꿀 것인가?"]},
+{k:"pt",s:3,t:"생성형 AI 시대의 연구윤리와 재단의 대응",d:"연구계획서·논문·평가에 AI가 쓰이는 상황",
+ why:"'AI 시대 대응을 위한 학술연구지원 패러다임 전환'이 재단 간담회 주요 의제.",
+ one:"금지가 아니라 '투명한 사용'을 원칙으로 한 가이드라인과 교육이 필요합니다.",
+ a:["AI 사용은 이미 보편화되어 일괄 금지는 실효성이 없다","허위 인용·데이터 조작 등 새로운 유형의 연구부정 위험이 있다","평가자료를 외부 AI에 입력하면 미공개 아이디어 유출 문제가 생긴다"],
+ b:["계획서·보고서에 AI 활용 범위 표기 기준 마련","평가위원의 평가자료 외부 AI 입력 금지와 보안 서약","연구윤리 교육에 AI 항목 추가","책임은 끝까지 연구자에게 있다는 원칙 명시"],
+ q:["AI로 쓴 계획서를 걸러낼 수 있는가, 걸러내야 하는가?","재단 업무에 AI를 쓴다면 어디에 먼저 쓰겠는가?","분야별로 기준이 달라야 하지 않나?"]},
+{k:"pt",s:2,t:"연구자 행정 부담 완화 방안",d:"연구에 몰입할 수 있는 환경 만들기",
+ why:"연구현장 중심 지원체계가 재단의 반복되는 기조. 직무와 직접 맞닿아 답하기 좋은 주제.",
+ one:"서류를 줄이는 것만이 아니라, 규정을 단순하게 하고 재단이 먼저 안내하는 방식으로 바꿔야 합니다.",
+ a:["연구비 집행·정산·보고 서류가 연구 시간을 잠식한다","사업마다 규정과 양식이 달라 혼란이 생긴다","부담은 행정 인력이 부족한 소규모 연구실·지역대학에 더 크다"],
+ b:["제출 서류·양식 표준화와 중복 제출 폐지","시스템 연계로 이미 가진 정보는 다시 요구하지 않기","자주 묻는 사례 중심의 사전 안내와 상담 창구","자율성을 넓히되 부정 사용은 엄정 제재"],
+ q:["자율을 넓히면 부정 사용이 늘지 않겠는가?","가장 먼저 없앨 절차 하나를 꼽는다면?","부담 완화 효과는 어떻게 확인하나?"]},
+{k:"pt",s:2,t:"신진연구자와 학문후속세대 지원 강화",d:"대학원생·박사후연구원·초임 교원의 성장 경로",
+ why:"성장단계별 지원체계 전환, 신진연구자 선정률 상승이 최근 보도됨. 이공계 인재 유출 논의와도 연결.",
+ one:"첫 과제를 따기 쉽게 하고, 과제와 과제 사이가 끊기지 않도록 사다리를 이어 주어야 합니다.",
+ a:["초기 경력의 공백은 연구 포기나 해외·타 분야 이탈로 이어진다","실적이 적은 신진은 경쟁형 과제에서 불리하다","인건비 불안정이 대학원 진학 기피의 원인이다"],
+ b:["신진 전용 트랙과 실적보다 계획 중심의 평가","박사후연구원 독립 과제와 안정적 인건비 지원","탈락자에게 구체적 평가의견 제공으로 재도전 지원","멘토링·연구장비 접근 등 비금전 지원 병행"],
+ q:["중견 연구자 몫이 줄어든다는 불만에는?","인문사회 분야 후속세대는 무엇이 다른가?","지원 후 정착률을 어떻게 추적하나?"]},
+{k:"pt",s:1,t:"연구성과의 확산과 활용 제고",d:"논문에서 끝나지 않는 성과, 인문사회 분야 포함",
+ why:"'인문사회 분야 연구성과 확산 및 활용 확대'가 간담회 의제. 성과관리 직무와 연결.",
+ one:"성과를 쌓는 데서 멈추지 않고, 필요한 사람이 찾아 쓸 수 있게 공개하고 연결해야 합니다.",
+ a:["세금으로 만든 성과는 사회에 돌아가야 한다","성과 정보가 흩어져 있어 후속 연구·정책에 잘 쓰이지 않는다","논문 편수 중심 평가는 활용 가치를 반영하지 못한다"],
+ b:["오픈액세스·연구데이터 공개 확대","일반인이 읽을 수 있는 성과 요약 제공","정책·교육·산업 수요처와 연결하는 후속 지원","질적 지표와 사회적 기여 사례 평가 반영"],
+ q:["인문학 성과의 '활용'은 무엇으로 볼 것인가?","공개를 꺼리는 연구자는 어떻게 설득하나?"]},
+
+{k:"debate",s:3,t:"기초연구비: 선택과 집중 vs 폭넓은 지원",d:"우수 연구자 집중 지원인가, 저변 확대인가",
+ why:"기초연구 정책의 오래된 쟁점이자 예산 복원과 함께 다시 떠오른 논점.",
+ pro:["(집중) 한정된 예산으로 세계적 성과를 내려면 규모가 필요하다","(집중) 우수 연구자에 대한 장기 지원이 탁월한 성과로 이어진다","(집중) 소액 분산은 관리 비용만 키울 수 있다"],
+ con:["(저변) 어디서 성과가 나올지 미리 알 수 없는 것이 기초연구다","(저변) 다양성이 줄면 새로운 분야의 싹이 사라진다","(저변) 인력 양성과 지역 연구 기반 유지에 필수"],
+ mid:"이분법보다 포트폴리오. 저변은 안정적으로 깔고, 그 위에서 검증된 연구를 단계적으로 키우는 구조로 합의 유도.",
+ q:["비율을 정한다면 어떻게 나누겠는가?","소액 과제의 성과는 어떻게 평가하나?"]},
+{k:"debate",s:3,t:"연구과제 평가에 AI를 도입해야 하는가",d:"평가위원 추천, 유사과제 검토, 평가 보조",
+ why:"AI 현안과 평가 공정성이라는 두 핵심 주제가 만나는 지점.",
+ pro:["평가위원 매칭과 이해충돌 확인을 빠르고 일관되게 할 수 있다","유사·중복 과제 검토의 효율이 높아진다","평가자 간 편차를 점검하는 보조 도구가 된다"],
+ con:["학습 데이터의 편향이 기존 주류 연구에 유리하게 작용할 수 있다","결과를 설명하기 어려워 이의신청 대응이 곤란하다","미공개 연구 아이디어의 보안 문제"],
+ mid:"판단은 사람이, AI는 행정 보조(매칭·중복 검토·형식 점검)부터 단계적으로. 시범 적용 후 검증.",
+ q:["AI가 추천한 평가위원이 부적절했다면 책임은 누구에게?","탈락자가 AI 사용을 문제 삼으면?"]},
+{k:"debate",s:2,t:"성실실패 인정 범위를 넓혀야 하는가",d:"도전 장려와 책임성 사이",
+ why:"도전적 연구 장려 정책의 뒷면. 찬반이 분명히 갈려 토론 주제로 쓰기 좋음.",
+ pro:["실패 불이익이 사라져야 높은 목표를 세운다","실패 과정의 지식도 다음 연구의 자산이다","선진 연구지원기관들의 고위험 연구 지원 방식과 맞는다"],
+ con:["도덕적 해이와 세금 낭비 우려","성실 여부를 판단할 객관적 기준이 부족하다","국민 눈높이에서 설명하기 어렵다"],
+ mid:"확대하되 과정 기록(연구노트)과 중간 점검을 조건으로. 실패 데이터 공유를 의무화해 사회적 가치 확보.",
+ q:["성실성은 누가 어떤 기준으로 판단하나?","확대 후 부작용이 나오면 어떻게 되돌리나?"]},
+{k:"debate",s:2,t:"평가위원 명단과 평가의견을 어디까지 공개할 것인가",d:"투명성과 평가의 독립성",
+ why:"평가 공정성은 재단에 대한 신뢰와 직결. 국정감사 단골 지적 사항.",
+ pro:["공개는 책임 있는 평가를 유도한다","탈락자가 이유를 알아야 재도전할 수 있다","이해충돌 의혹을 줄인다"],
+ con:["좁은 학계에서 소신 평가가 어려워진다","평가위원 섭외가 더 힘들어진다","로비·항의 위험"],
+ mid:"평가의견은 충실하게 공개, 개별 평가자 식별은 제한. 명단은 사후 일괄 공개 등 단계적 접근.",
+ q:["평가위원이 부족한 소규모 분야는 어떻게 하나?","부실한 평가의견은 어떻게 걸러내나?"]},
+{k:"debate",s:1,t:"국제공동연구 확대, 국내 연구비와의 우선순위",d:"해외 협력에 예산을 얼마나 쓸 것인가",
+ why:"국제협력 분야 모집이 있고, 글로벌 R&D 확대는 최근 몇 년의 정책 흐름.",
+ pro:["첨단 분야는 혼자서 따라잡기 어렵다","해외 네트워크는 신진연구자 성장에 도움","국제 대형 프로그램 참여로 연구 위상이 높아진다"],
+ con:["국내 연구비가 부족한 상황에서 해외로 예산이 나간다","성과와 지식재산 귀속 문제","준비 없는 확대는 형식적 협력에 그친다"],
+ mid:"분야·상대국을 전략적으로 선별하고, 국내 연구자의 실질 참여와 성과 귀속 기준을 사전에 정하는 조건으로 확대.",
+ q:["협력 상대를 고르는 기준은?","연구보안 문제는 어떻게 다루나?"]},
+
+{k:"team",s:3,t:"한정된 예산으로 신규 사업 우선순위 정하기",d:"후보 사업 5~6개 중 3개를 골라 근거와 함께 발표",
+ why:"팀 과제의 전형적 형태. 정답보다 합의에 이르는 과정을 봄.",
+ a:["먼저 선정 기준부터 합의 (시급성·파급효과·실현 가능성·형평성)","기준별로 간단히 점수화해 표로 정리","의견이 갈리면 다수결 전에 조건부 절충안 탐색"],
+ b:["역할 분담: 진행, 시간 관리, 기록, 발표","시간 배분: 기준 합의 5 → 검토 15 → 정리 7 → 리허설 3","탈락시킨 사업의 보완책도 한 줄씩 언급"],
+ q:["왜 그 기준을 택했는가?","본인 의견이 채택되지 않았을 때 어떻게 했는가?"]},
+{k:"team",s:2,t:"연구현장 간담회 기획안 만들기",d:"대상·의제·진행 방식·후속 조치 설계",
+ why:"재단이 실제로 '찾아가는 현장 간담회'를 운영 중이라 실무형 과제로 나올 만함.",
+ a:["목적을 한 문장으로 먼저 확정 (의견 수렴인가, 제도 안내인가)","참석자 구성: 신진·중견, 수도권·지역, 분야 균형","의제는 3개 이내로 좁히기"],
+ b:["사전 설문으로 의제 수집","당일은 발표보다 질의·토의 비중을 크게","수렴 의견의 반영 여부를 사후에 회신하는 절차 포함"],
+ q:["형식적 행사로 끝나지 않게 하려면?","상충하는 요구가 나오면 어떻게 정리하나?"]},
+{k:"team",s:2,t:"연구부정 의혹 제보 대응 시나리오",d:"지원 과제에서 표절·데이터 조작 제보가 들어온 상황",
+ why:"연구윤리는 재단의 핵심 관리 업무. 상황판단형 과제로 내기 좋음.",
+ a:["사실 확인 전 단정 금지, 제보자 보호 최우선","조사 주체는 원칙적으로 소속 연구기관, 재단은 절차 관리·감독","피조사자의 소명 기회 보장"],
+ b:["접수 → 예비조사 → 본조사 → 판정 → 후속조치 순서로 정리","확정 시 제재(참여 제한·연구비 환수 등)와 재발 방지책","언론 문의 대응 원칙: 확인된 사실만"],
+ q:["유명 연구자라 기관이 소극적이면?","제보가 허위로 드러나면?"]},
+
+{k:"essay",s:2,t:"연구자에게 신뢰받는 연구지원기관의 조건",d:"한국연구재단이 나아갈 방향",
+ why:"기관의 역할과 가치를 묻는 포괄형 논제. 지원동기와 연결해 쓰기 좋음.",
+ one:"신뢰는 공정한 평가, 예측 가능한 지원, 현장과의 소통에서 나온다.",
+ a:["공정성 — 누가 평가해도 납득할 수 있는 절차와 충실한 평가의견","안정성 — 정책이 바뀌어도 진행 중인 연구는 지켜진다는 믿음","전문성 — 분야를 이해하는 기획·관리 역량"],
+ b:["서론: 신뢰가 왜 연구지원의 전제인지","본론: 세 조건별 현황과 개선 방향","결론: 구성원으로서 본인이 기여할 부분"],
+ q:[]},
+{k:"essay",s:1,t:"지역대학의 위기와 연구지원기관의 역할",d:"학령인구 감소와 수도권 집중 속 연구 기반 유지",
+ why:"대학재정지원사업을 재단이 수행하고, 지역 균형은 꾸준한 정책 과제.",
+ one:"지역대학의 연구 기반은 한번 무너지면 복구가 어려우므로, 경쟁과 별개로 최소한의 토대를 지켜야 한다.",
+ a:["대학원생 확보가 어려워 연구실 유지 자체가 힘들다","연구 장비·행정 인력 격차가 과제 경쟁력 격차로 이어진다","지역 산업과 인재 양성의 거점 역할"],
+ b:["지역 연구자의 과제 참여 기회 확보","공동 장비·거점 연구소 등 인프라 공유","지자체·지역 산업과 연계한 연구 지원","균형 지원이 수월성을 해친다는 반론에 대한 입장"],
+ q:[]}
+];
+
+const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const ul=a=>a&&a.length?"<ul>"+a.map(x=>"<li>"+esc(x)+"</li>").join("")+"</ul>":"";
+const sec=(h,c)=>c?"<h4>"+h+"</h4>"+c:"";
+const list=document.getElementById("list");
+list.innerHTML=T.map(x=>{
+  const [name,cv]=KIND[x.k];
+  let body=sec("왜 나올 만한가","<p>"+esc(x.why)+"</p>");
+  if(x.one)body+=sec("결론 한 문장",'<p class="one">'+esc(x.one)+"</p>");
+  if(x.k==="debate"){
+    body+='<div class="cols"><div>'+sec("한쪽 논거",ul(x.pro))+"</div><div>"+sec("반대쪽 논거",ul(x.con))+"</div></div>";
+    body+=sec("합의로 이끄는 방향",'<p class="one">'+esc(x.mid)+"</p>");
+  }else{
+    body+=sec(x.k==="team"?"접근 순서":x.k==="essay"?"핵심 논점":"근거 · 문제 인식",ul(x.a));
+    body+=sec(x.k==="team"?"진행 요령":x.k==="essay"?"글 구성":"개선안",ul(x.b));
+  }
+  body+=sec("예상 꼬리질문",ul(x.q));
+  return '<details class="topic" data-k="'+x.k+'" style="--c:var('+cv+')"><summary><span class="tag">'+name+
+    '</span><span class="ttl">'+esc(x.t)+"<small>"+esc(x.d)+'</small></span><span class="stars" title="출제 가능성 추정">'+
+    "★".repeat(x.s)+"☆".repeat(3-x.s)+'</span></summary><div class="body">'+body+"</div></details>";
+}).join("");
+
+const items=[...list.children],chips=[...document.querySelectorAll(".chip")],q=document.getElementById("q");
+let f="all";
+function apply(){
+  const kw=q.value.trim().toLowerCase();let n=0;
+  items.forEach(el=>{
+    const ok=(f==="all"||el.dataset.k===f)&&(!kw||el.textContent.toLowerCase().includes(kw));
+    el.hidden=!ok;if(ok)n++;
+  });
+  document.getElementById("empty").style.display=n?"none":"block";
+}
+chips.forEach(c=>c.onclick=()=>{f=c.dataset.f;chips.forEach(o=>o.setAttribute("aria-pressed",o===c));apply();});
+q.oninput=apply;
+const tg=document.getElementById("toggle");
+tg.onclick=()=>{const open=tg.textContent==="모두 펼치기";items.forEach(el=>{if(!el.hidden)el.open=open;});
+  tg.textContent=open?"모두 접기":"모두 펼치기";};
+
+function load(k){try{return JSON.parse(localStorage.getItem(k))||{}}catch(e){return {}}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+
+const NUMS=[
+ ["올해 정부 R&D 총예산","과기정통부 예산 보도자료"],
+ ["한국연구재단 연간 예산 규모","재단 홈페이지 · 알리오 경영공시"],
+ ["기초연구사업 예산과 신규 과제 수","기초연구사업 시행계획"],
+ ["개인기초연구 선정률","재단 통계 · 보도자료"],
+ ["재단 미션 · 비전 · 핵심가치","재단 홈페이지 기관소개"],
+ ["이사장 성함과 최근 강조 메시지","재단 보도자료 · 신년사"]
+];
+const nv=load("nrf-nums");
+document.getElementById("numrows").innerHTML=NUMS.map((r,i)=>
+ "<tr><td>"+r[0]+"</td><td>"+r[1]+'</td><td contenteditable="true" data-i="'+i+'">'+esc(nv[i]||"")+"</td></tr>").join("");
+document.querySelectorAll("td[contenteditable]").forEach(td=>td.oninput=()=>{
+  nv[td.dataset.i]=td.textContent.trim();if(!nv[td.dataset.i])td.textContent="";save("nrf-nums",nv);});
+
+const PLAN=[
+ ["11/12 (목)","합격 안내문에서 과제 유형·시간·준비물 확인, 재단 기관소개와 직무기술서 읽기"],
+ ["11/13 (금)","★★★ 주제 5개의 답안 뼈대를 자기 말로 다시 쓰기"],
+ ["11/14 (토)","나머지 주제 훑기, '외울 수치' 표 채우기"],
+ ["11/15 (일)","30분 준비 → 5분 발표를 3회 녹음, 논술 1편 시간 재고 쓰기"],
+ ["11/16 (월)","토론 발언 연습, 자소서 복기, 이 페이지 한 번 통독 후 일찍 자기"],
+ ["11/17 (화)","시험 당일 — 신분증·수험표·필기구, 30분 일찍 도착"]
+];
+const pv=load("nrf-plan");
+document.getElementById("plans").innerHTML=PLAN.map((p,i)=>
+ '<li><input type="checkbox" id="p'+i+'"'+(pv[i]?" checked":"")+'><span><b>'+p[0]+"</b> · "+p[1]+"</span></li>").join("");
+document.querySelectorAll("#plans input").forEach((c,i)=>c.onchange=()=>{pv[i]=c.checked;save("nrf-plan",pv);});
+
+const d=Math.ceil((new Date(2026,10,17)-new Date(new Date().toDateString()))/864e5);
+document.getElementById("dday").textContent=d>0?"시험까지 D-"+d:d===0?"오늘이 시험일 · 화이팅":"시험 종료";
+</script>
+</body>
+</html>
