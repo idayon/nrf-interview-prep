@@ -81,6 +81,14 @@ th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-ali
 th{background:var(--accent-soft);white-space:nowrap}
 td[contenteditable]{min-width:140px;color:var(--accent);font-weight:600}
 td[contenteditable]:empty::before{content:"직접 확인 후 입력";color:var(--sub);font-weight:400}
+.issue{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:10px 0}
+.issue h3{margin:6px 0 8px;font-size:1.02rem}
+.issue ul{margin:0;padding-left:1.15em;font-size:.94rem}
+.issue li{margin:3px 0}
+.date{display:inline-block;font-size:.76rem;font-weight:800;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:2px 8px}
+.use{margin:10px 0 0;padding:8px 12px;border-left:3px solid var(--accent);font-size:.92rem;background:var(--accent-soft);border-radius:0 8px 8px 0}
+.src{margin:8px 0 0;font-size:.82rem;color:var(--sub)}
+.src a{color:var(--accent)}
 footer{margin-top:50px;color:var(--sub);font-size:.82rem;border-top:1px solid var(--line);padding-top:16px}
 .empty{color:var(--sub);text-align:center;padding:30px 0;display:none}
 @media print{nav,.tools{display:none}details.topic{break-inside:avoid}body{background:#fff}}
@@ -90,11 +98,12 @@ footer{margin-top:50px;color:var(--sub);font-size:.82rem;border-top:1px solid va
 <div class="wrap">
 <header>
   <h1>한국연구재단 다차원 전형 대비 노트</h1>
-  <p class="lead">ICT·융합 분야 · 재단 주요 사업 · 예상 주제 22개와 답안 뼈대 · 5일 체크리스트</p>
+  <p class="lead">ICT·융합 분야 · 재단 주요 사업 · 최근 이슈 · 예상 주제 23개와 답안 뼈대 · 5일 체크리스트</p>
   <span class="dday" id="dday"></span>
 </header>
 
 <nav>
+  <a href="#news">최근 이슈</a>
   <a href="#biz">주요 사업</a>
   <a href="#ict">ICT·융합</a>
   <a href="#topics">예상 주제</a>
@@ -108,6 +117,105 @@ footer{margin-top:50px;color:var(--sub);font-size:.82rem;border-top:1px solid va
   <b>읽기 전에.</b> 여기 있는 주제는 재단의 최근 현안에서 뽑은 <b>예상</b>이며 실제 출제와 다를 수 있습니다.
   답안 뼈대는 외우는 용도가 아니라 방향을 잡는 용도입니다. 수치와 제도 세부 내용은 과기정통부·교육부 보도자료와 재단 홈페이지에서 직접 확인한 뒤 사용하세요.
 </div>
+
+<section id="news">
+  <h2>최근 이슈 (뉴스 근거)</h2>
+  <p class="h2sub">2026년 11월 11일 기준으로 확인한 보도입니다. 수치는 각 기사에 실린 값이며, 의원실 자료에 근거한 것은 그렇게 표시했습니다.</p>
+
+  <div class="issue">
+    <span class="date">2026.11.05</span>
+    <h3>2027년 기초연구사업 시행계획 확정, 1차 신규과제 공모 시작</h3>
+    <ul>
+      <li>정부 예산안 기준 <b>2조 9,102억 원</b>(올해보다 1,739억 원 증가), 지원 과제 <b>18,516개</b>로 역대 최대</li>
+      <li>신규과제 5,460개(개인 5,318 + 집단 142). 개인 신규는 올해 7,569개보다 줄었고 2022년 수준</li>
+      <li>개인 신규 중 <b>약 1,000개를 지역에 우선 배정</b>, 기본연구 A·B 지역 비중 40%</li>
+      <li><b>지역장기연구 신설</b>: 지역대 신진 전임교원 100명, 최장 10년 지원</li>
+      <li>신진·박사후 연구자에게 개인 신규의 약 30%(1,600개) 배정</li>
+      <li><b>단계·최종 보고서의 논문·특허 정량 실적 제출 폐지</b>, 도전성·성실성·기여도·활용성 중심 평가</li>
+      <li>연구계획서의 AI 활용 경향을 시범적으로 파악할 계획</li>
+    </ul>
+    <p class="use"><b>활용.</b> 지금 재단이 실제로 집행 중인 가장 최신 계획. "정량 실적 폐지 이후 무엇으로 평가할 것인가", "지역 우선 배정과 수월성의 균형"은 그대로 토론 주제가 됨. 국회 심의에 따라 수치가 바뀔 수 있다는 점도 함께 말할 것.</p>
+    <p class="src">출처: <a href="https://www.hellodd.com/news/articleView.html?idxno=113771" target="_blank" rel="noopener">헬로디디</a> · <a href="https://www.segye.com/newsView/20261105512156" target="_blank" rel="noopener">세계일보</a></p>
+  </div>
+
+  <div class="issue">
+    <span class="date">2026.10.16 ~ 10.20 · 국정감사</span>
+    <h3>연구비 부정·연구부정 관리의 실효성 지적</h3>
+    <ul>
+      <li><b>환수율 1.35%</b> — 2021년~2026년 8월 부정행위로 제재받은 과제 209건(연구비 약 2,404억 원) 중 환수 결정액은 약 32.5억 원. 환수 0원인 과제가 85건(40.7%) <i>(이정헌 의원실 자료)</i></li>
+      <li>재단 해명: 환수는 총연구비가 아니라 <b>제재 사유와 관련된 금액</b>을 기준으로 하며, 환수는 원상회복, 제재부가금은 벌칙이라는 구분</li>
+      <li><b>조사 지연</b> — 2021년 이후 연구부정 사건 83건 중 49건(59%)이 조사기간 6개월 원칙을 넘김. 최장 911일 <i>(김선민 의원실 자료)</i></li>
+      <li><b>적발 건수</b> — 2025년 과제 24,389건 중 연구비 부정 적발 3건이라는 지적. 제재부가금 상한을 30배로 높인 개정 제도가 <b>내년 3월 시행</b> 예정 <i>(황정아 의원 질의, 과기정통부 답변)</i></li>
+    </ul>
+    <p class="use"><b>활용.</b> 재단 입장에서 가장 아픈 최근 지적. 비판을 그대로 받아쓰지 말고 "조사 주체는 연구기관, 재단은 관리·감독"이라는 구조와 재단 해명을 이해한 뒤, 조사 기한 관리·진행 상황 기록·제재 기준 정비 같은 개선안으로 답할 것.</p>
+    <p class="src">출처: <a href="https://www.khan.co.kr/article/202610160600021" target="_blank" rel="noopener">경향신문 10.16</a> · <a href="https://view.asiae.co.kr/article/2026101907592982025" target="_blank" rel="noopener">아시아경제 10.19</a> · <a href="https://view.asiae.co.kr/article/2026102016023957800" target="_blank" rel="noopener">아시아경제 10.20</a></p>
+  </div>
+
+  <div class="issue">
+    <span class="date">2026.09.01</span>
+    <h3>2027년 정부 R&amp;D 예산안 39.5조 원, AI에 4.1조 원</h3>
+    <ul>
+      <li>정부 R&amp;D <b>39조 5천억 원</b>, 올해보다 11.2% 증가(역대 최대). 국회 심의를 거쳐 12월 확정 예정</li>
+      <li><b>AI R&amp;D 4조 1천억 원</b>, 올해보다 약 70% 증가</li>
+      <li>3대 메가프로젝트(반도체·피지컬 AI·AI 데이터센터) 5.8조 원, 7대 SEED(양자 포함) 3.7조 원</li>
+      <li>기초연구 3.6조 원 (정부 전체 기준이라 재단 기초연구사업 2.91조 원과 범위가 다름)</li>
+      <li>총사업비 1,000억 원 이상 대형 R&amp;D의 사전 검토 기간을 약 2년에서 3개월로 단축</li>
+    </ul>
+    <p class="use"><b>활용.</b> ICT·융합 분야에는 직접적인 순풍. "예산이 급증할 때 전문기관이 챙겨야 할 것"(기획의 질, 중복 방지, 평가 인력)으로 연결하면 좋음.</p>
+    <p class="src">출처: <a href="https://www.fnnews.com/news/202609011809102581" target="_blank" rel="noopener">파이낸셜뉴스</a> · <a href="https://www.korea.kr/briefing/policyBriefingView.do?newsId=156777277" target="_blank" rel="noopener">과기정통부 예산안 브리핑</a></p>
+  </div>
+
+  <div class="issue">
+    <span class="date">2026.03.31 → 08.20 → 11.04</span>
+    <h3>재단 자체의 AI 전환: NRF 인공지능 위원회</h3>
+    <ul>
+      <li>3월 31일 이사장 직속 <b>NRF 인공지능 위원회</b> 출범. 위원장은 이사장, 실무 책임관(CAIO)은 사무총장</li>
+      <li>정책·전환·사업·경영 4대 분야로 연구기획·평가·관리 등 <b>R&amp;D 전 주기에 AI 도입</b> 추진</li>
+      <li>시범 운영 서비스: R&amp;D 규정 안내 챗봇, 평가의견 적정성 확인, 스마트게시판(질의 자동 답변)</li>
+      <li>8월 20일 2차 회의에서 실무 조직 'NRF AX 추진 협의체' 구성 확정</li>
+      <li>11월 4일 사무총장이 포럼에서 "AI 기반 기관 운영과 데이터 중심 의사결정 체계로 전환 중"이라고 설명</li>
+    </ul>
+    <p class="use"><b>활용.</b> ICT·융합 지원자에게 가장 유리한 소재. "평가에 AI 도입" 토론에서 재단이 이미 평가의견 적정성 확인에 AI를 시범 적용 중이라는 사실을 근거로 쓸 수 있음.</p>
+    <p class="src">출처: <a href="https://www.aitimes.kr/news/articleView.html?idxno=39345" target="_blank" rel="noopener">인공지능신문 3.31</a> · <a href="https://m.news.nate.com/view/20260820n28371" target="_blank" rel="noopener">8.20 보도</a> · <a href="https://biz.heraldcorp.com/article/10925981" target="_blank" rel="noopener">헤럴드경제 11.4</a></p>
+  </div>
+
+  <div class="issue">
+    <span class="date">2025.11 → 2026.07.01</span>
+    <h3>R&amp;D 평가·행정 제도 개편</h3>
+    <ul>
+      <li>정부 'R&amp;D 생태계 혁신방안'(2025년 11월): <b>과제 평가등급 폐지</b>, <b>평가위원 실명제</b> 도입(참여 평가위원 명단 공개 수준), 우수 평가위원 풀 6,000여 명 확보, 평가수당 현실화</li>
+      <li>출연연 <b>PBS(연구과제중심제도) 단계적 폐지</b> — 재단이 아니라 출연연 대상이지만 R&amp;D 지형을 바꾸는 변화</li>
+      <li>2026년 7월 1일: 평가등급 단계적 폐지와 연구행정 AI 도입 방향 재확인. 2027년부터 AI 지원 기능 확대, IRIS 중심 시스템 연계로 중복 입력 축소</li>
+    </ul>
+    <p class="use"><b>활용.</b> "성실실패", "평가위원 공개", "행정부담 완화" 주제의 근거. 이미 결정된 정책 방향이므로 찬반보다 "어떻게 잘 시행할 것인가"로 답하는 편이 안전함.</p>
+    <p class="src">출처: <a href="https://m.ddaily.co.kr/page/view/2025112417522378282" target="_blank" rel="noopener">디지털데일리</a> · <a href="https://www.korea.kr/news/policyNewsView.do?newsId=156727039" target="_blank" rel="noopener">정책브리핑</a> · <a href="https://news.nate.com/view/20260701n28533" target="_blank" rel="noopener">7.1 보도</a> (7.1 기사는 본문 일부만 확인)</p>
+  </div>
+
+  <div class="issue">
+    <span class="date">2026.01.29</span>
+    <h3>제1차 양자과학기술·양자산업 육성 종합계획</h3>
+    <ul>
+      <li>정부의 첫 양자 분야 5년 단위 종합계획. 제1차 양자클러스터 기본계획과 함께 발표</li>
+      <li>2035년까지 <b>양자 인력 1만 명</b>, 양자기업 2,000개, 퀀텀칩 제조 세계 1위 목표</li>
+      <li>5월에는 양자·슈퍼컴퓨팅·AI 결합 연구 지원을 담은 법 개정 논의 보도</li>
+    </ul>
+    <p class="use"><b>활용.</b> 양자 PT 주제의 상위 계획. 재단의 양자 사업들이 이 계획의 실행 수단이라는 관계로 설명.</p>
+    <p class="src">출처: <a href="https://www.korea.kr/news/policyNewsView.do?newsId=148958779" target="_blank" rel="noopener">정책브리핑</a> · <a href="https://m.news.nate.com/view/20260129n35885" target="_blank" rel="noopener">1.29 보도</a> · <a href="https://m.news.nate.com/view/20260512n24245" target="_blank" rel="noopener">5.12 보도</a></p>
+  </div>
+
+  <div class="issue">
+    <span class="date">기관 동향</span>
+    <h3>중장기 경영목표(2026~2030)와 창립 50주년</h3>
+    <ul>
+      <li>4대 전략목표: ① 과학기술 강국 실현 연구개발 패러다임 확립 ② 대학·지역혁신 기반 미래인재 양성 ③ 학술·연구 가치 국민공감 플랫폼 구축 ④ ESG 혁신경영 강화</li>
+      <li>따로 관리하던 기초연구와 국책연구를 하나의 전략목표로 통합</li>
+      <li>2027년 <b>창립 50주년</b>. 11월 11일 기념 엠블럼 공모 발표</li>
+      <li>이사장은 6월 인터뷰에서 재단을 "R&amp;D 방향을 제시하는 혁신 플랫폼"으로 표현</li>
+    </ul>
+    <p class="use"><b>활용.</b> 지원동기와 마무리 발언에 쓰기 좋음. 전략목표 4개는 외워 갈 것.</p>
+    <p class="src">출처: <a href="https://webzine.nrf.re.kr/magazine/2511/sub9.php" target="_blank" rel="noopener">재단 웹진</a> · <a href="https://view.asiae.co.kr/article/2026111108151198508" target="_blank" rel="noopener">아시아경제 11.11</a> · <a href="https://www.etnews.com/20260612000112" target="_blank" rel="noopener">전자신문 6.12</a></p>
+  </div>
+</section>
 
 <section id="biz">
   <h2>재단 주요 사업 한눈에</h2>
@@ -274,6 +382,12 @@ footer{margin-top:50px;color:var(--sub);font-size:.82rem;border-top:1px solid va
 <script>
 const KIND={pt:["발표","--pt"],debate:["토론","--debate"],team:["팀 과제","--team"],essay:["논술","--essay"]};
 const T=[
+{k:"pt",s:3,t:"연구비 부정·연구부정 관리의 실효성 강화",d:"2026년 국정감사 지적에 재단은 어떻게 답할 것인가",
+ why:"10월 국감에서 환수율 1.35%, 조사 6개월 원칙 초과 59%, 적발 3건 등이 연달아 지적됨. 가장 최근의 직접적 현안.",
+ one:"제재를 무겁게 하는 것만큼, 조사가 제때 끝나고 그 과정이 기록으로 남는 관리 체계가 필요합니다.",
+ a:["조사는 연구기관이 맡고 재단은 관리·감독하는 구조라 기한 통제가 약하다","환수는 제재 사유와 관련된 금액만 대상이라 총연구비 대비 비율은 낮게 보인다","예비조사 착수·완료일조차 확인되지 않는 사건이 많다는 것은 기록 관리의 문제다"],
+ b:["사건별 진행 단계와 기한을 재단이 상시 점검하고 지연 시 사유 제출 의무화","기관의 자체 조사가 부실하면 재단이 직접 조사하는 기준 마련","내년 3월 시행되는 제재부가금 상향 제도의 적용 기준을 사전에 명확히","성실한 연구자가 위축되지 않도록 사전 안내와 컨설팅 병행"],
+ q:["환수율이 낮다는 비판이 타당하다고 보는가?","제자 등 제보자는 어떻게 보호하나?","제재 강화가 도전적 연구를 위축시키지 않겠는가?"]},
 {k:"pt",ict:1,s:3,t:"양자기술 경쟁력 확보를 위한 연구지원 전략",d:"후발 주자로서 한정된 예산을 어디에 쓸 것인가",
  why:"ICT·융합 분야에서 사업 수와 예산이 가장 빠르게 늘어나는 영역. 플래그십, 양자팹, 인력양성, 국제협력 사업이 동시에 진행 중.",
  one:"연구개발만이 아니라 인프라·인력·국제협력을 함께 묶어 생태계를 만드는 것이 후발 주자의 전략입니다.",
@@ -448,7 +562,9 @@ function load(k){try{return JSON.parse(localStorage.getItem(k))||{}}catch(e){ret
 function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
 
 const NUMS=[
- ["2026년 정부 R&D 총예산","보도: 약 35.3조 원 (역대 최대) — 예산 보도자료로 확정치 확인"],
+ ["정부 R&D 총예산","보도: 2027년 예산안 39.5조 원 (올해 대비 11.2% 증가, 12월 국회 확정 예정). 2026년은 약 35.5조 원"],
+ ["2027년 기초연구사업 (정부안)","보도: 2조 9,102억 원, 18,516개 과제, 신규 5,460개"],
+ ["2027년 AI R&D (정부안)","보도: 4조 1천억 원, 올해 대비 약 70% 증가"],
  ["과기정통부 2026 R&D 종합시행계획","보도: 8조 1,188억 원 (과학기술 6조 4,402억 + ICT 1조 6,786억)"],
  ["2026년 기초연구사업","재단 웹진: 2조 7,362억 원, 전년 대비 17.1% 증가"],
  ["2026년 융합원천기술개발사업","보도: 2,342억 원 (융합원천연구 1,272억, 슈퍼컴 742억)"],
