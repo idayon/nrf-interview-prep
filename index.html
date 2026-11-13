@@ -130,7 +130,7 @@ footer{margin-top:50px;color:var(--sub);font-size:.82rem;border-top:1px solid va
 <div class="wrap">
 <header>
   <h1>한국연구재단 다차원 전형 대비 노트</h1>
-  <p class="lead">ICT·융합 분야 · 재단 주요 사업 · 최근 이슈 · 예상 주제 23개와 답안 뼈대 · 5일 체크리스트</p>
+  <p class="lead">ICT·융합 분야 · 재단 주요 사업 · 최근 이슈 · <b>실전 연습(타이머·채점)</b> · 내 경험 연결 · 예상 주제 23개 · 5일 체크리스트</p>
   <span class="dday" id="dday"></span>
 </header>
 
@@ -139,6 +139,8 @@ footer{margin-top:50px;color:var(--sub);font-size:.82rem;border-top:1px solid va
   <a href="#news">최근 이슈</a>
   <a href="#biz">주요 사업</a>
   <a href="#ict">ICT·융합</a>
+  <a href="#drill">실전 연습</a>
+  <a href="#mine">내 경험</a>
   <a href="#topics">예상 주제</a>
   <a href="#frame">답변 틀</a>
   <a href="#behave">행동 요령</a>
@@ -331,6 +333,57 @@ footer{margin-top:50px;color:var(--sub);font-size:.82rem;border-top:1px solid va
   </div>
   <div id="list"></div>
   <p class="empty" id="empty">조건에 맞는 주제가 없습니다.</p>
+</section>
+
+<section id="drill">
+  <h2>실전 연습</h2>
+  <p class="h2sub">읽기만 하면 감이 안 옵니다. 주제를 뽑고, 시간을 재고, 끝나면 스스로 채점하세요. 기록은 이 브라우저에만 저장됩니다.</p>
+  <div class="card">
+    <div class="tools" style="margin-bottom:10px">
+      <button class="chip dk" data-k="any" aria-pressed="true">아무거나</button>
+      <button class="chip dk" data-k="pt" aria-pressed="false">발표</button>
+      <button class="chip dk" data-k="debate" aria-pressed="false">토론</button>
+      <button class="chip dk" data-k="team" aria-pressed="false">팀 과제</button>
+      <button class="chip dk" data-k="essay" aria-pressed="false">논술</button>
+      <label style="font-size:.88rem;color:var(--sub)"><input type="checkbox" id="dhot" checked> ★★★ 우선</label>
+    </div>
+    <button class="chip" id="dpick" style="background:var(--accent);color:#fff;border-color:var(--accent)">🎲 주제 뽑기</button>
+    <div id="dbox" hidden>
+      <p style="margin:14px 0 2px"><span class="tag" id="dtag" style="--c:var(--pt)"></span></p>
+      <h3 id="dtitle" style="margin:6px 0 2px;font-size:1.1rem"></h3>
+      <p id="dsub" style="margin:0;color:var(--sub);font-size:.92rem"></p>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0">
+        <span id="dclock" style="font-size:2rem;font-weight:800;font-variant-numeric:tabular-nums;min-width:110px">30:00</span>
+        <button class="chip" data-sec="1800">준비 30분</button>
+        <button class="chip" data-sec="600">준비 10분</button>
+        <button class="chip" data-sec="300">발표 5분</button>
+        <button class="chip" data-sec="40">토론 발언 40초</button>
+        <button class="chip" id="dstop">멈춤</button>
+      </div>
+      <textarea id="dmemo" rows="7" placeholder="결론 한 문장 → 현황·문제 → 원인 → 개선안 3개 → 기대효과·한계 (키워드로)" style="width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:.93rem"></textarea>
+      <h4 style="margin:14px 0 4px;font-size:.9rem">끝나고 스스로 채점</h4>
+      <ul class="check" id="drub"></ul>
+      <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+        <button class="chip" id="dsave">기록 저장</button>
+        <button class="chip" id="dans">답안 뼈대 보기</button>
+      </div>
+    </div>
+    <h4 style="margin:18px 0 4px;font-size:.9rem">연습 기록</h4>
+    <ul id="dlog" style="margin:0;padding-left:1.1em;font-size:.9rem;color:var(--sub)"></ul>
+  </div>
+</section>
+
+<section id="mine">
+  <h2>내 경험 연결</h2>
+  <p class="h2sub">다차원 전형에서는 정답보다 일하는 방식을 봅니다. 상황별로 꺼낼 내 경험을 미리 정해 두세요. (블라인드: 기관명·학교명은 말하지 않기)</p>
+  <div class="grid">
+    <div class="card"><h3>토론이 맴돌 때 → 기준부터</h3><ul><li>여행 숙소를 정할 때 가격·수영장·상태로 기준과 중요도를 먼저 정하자고 제안해 합의함</li><li>행동: 초반 1~2분 안에 "판단 기준부터 정하자"</li></ul></div>
+    <div class="card"><h3>팀 과제 진행 → 기록과 공유</h3><ul><li>졸업 프로젝트에서 작업이 겹치자 주 1회 회의·회의록·협업 툴로 진행을 공유함</li><li>행동: 시간 배분 제안, 결정 사항 메모, 마감 3분 전 결론 확인</li></ul></div>
+    <div class="card"><h3>행정 부담 · 서류 누락 주제</h3><ul><li>국제 공동 R&amp;D 사업 인턴 때 반복 누락을 보고 공고 요건 대조 점검표, 근거 조항을 붙인 응대 기준을 만듦</li></ul></div>
+    <div class="card"><h3>AI 도입 · AI 평가 주제</h3><ul><li>현직에서 업무 지침을 먼저 만들고 생성형 AI 초안 → 사람이 검증하는 방식으로 결산 자동화</li><li>DB가 없던 회사에 비교 보고서로 도입을 설득, AI로 스키마 설계 후 비공개 환경으로 이전 중</li><li>핵심 메시지: "기준과 검증 없이는 AI를 쓰면 안 된다"</li></ul></div>
+    <div class="card"><h3>연구윤리 · 부정 대응 주제</h3><ul><li>지출 금액 입력 실수를 발견하자 숨기지 않고 바로 보고해 감독기관 보고서까지 기한 내 정정</li><li>핵심 메시지: 빨리 드러내고 기록으로 남겨야 바로잡는 비용이 작다</li></ul></div>
+    <div class="card"><h3>한정 예산 · 우선순위 주제</h3><ul><li>임대료 자료 700건 검수: 정확도 → 기한 순으로 우선순위를 정하고 매크로 + 기존 결과 대조 검증으로 하루 남짓에 끝냄</li></ul></div>
+  </div>
 </section>
 
 <section id="frame">
@@ -615,8 +668,8 @@ document.querySelectorAll("td[contenteditable]").forEach(td=>td.oninput=()=>{
 const PLAN=[
  ["11/12 (목)","합격 안내문에서 과제 유형·시간·준비물 확인, 재단 기관소개와 직무기술서 읽기"],
  ["11/13 (금)","★★★ 주제 5개의 답안 뼈대를 자기 말로 다시 쓰기"],
- ["11/14 (토)","나머지 주제 훑기, '외울 수치' 표 채우기"],
- ["11/15 (일)","30분 준비 → 5분 발표를 3회 녹음, 논술 1편 시간 재고 쓰기"],
+ ["11/14 (토)","실전 연습 2회(★★★ 발표·토론) + '외울 수치' 표 채우기"],
+ ["11/15 (일)","실전 연습 3회: 30분 준비 → 5분 발표 녹음, 논술 1편 · '내 경험 연결' 소리 내어 말해 보기"],
  ["11/16 (월)","토론 발언 연습, 자소서 복기, 이 페이지 한 번 통독 후 일찍 자기"],
  ["11/17 (화)","시험 당일 — 신분증·수험표·필기구, 30분 일찍 도착"]
 ];
@@ -631,6 +684,43 @@ let pref=null;try{pref=localStorage.getItem("nrf-view")}catch(e){}
 setM(pref?pref==="m":window.innerWidth<=640);
 mv.onclick=()=>{const on=!document.body.classList.contains("m");setM(on);
   try{localStorage.setItem("nrf-view",on?"m":"pc")}catch(e){}};
+
+/* 실전 연습 */
+(function(){
+  const RUB=["첫 문장에 결론을 말했다","수치나 근거를 1개 이상 넣었다","개선안을 2~3개로 나눠 말했다","부작용·한계와 보완책까지 말했다","시간 안에 끝냈다"];
+  const $=id=>document.getElementById(id);
+  let kind="any",cur=null,left=0,timer=null;
+  const dks=[...document.querySelectorAll(".dk")];
+  dks.forEach(b=>b.onclick=()=>{kind=b.dataset.k;dks.forEach(x=>x.setAttribute("aria-pressed",x===b));});
+  $("drub").innerHTML=RUB.map((r,i)=>'<li><input type="checkbox" id="r'+i+'"><span>'+r+"</span></li>").join("");
+  const fmt=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+  function stop(){clearInterval(timer);timer=null;}
+  function start(sec){stop();left=sec;$("dclock").textContent=fmt(left);$("dclock").style.color="";
+    timer=setInterval(()=>{left--;$("dclock").textContent=fmt(Math.max(left,0));
+      if(left===60)$("dclock").style.color="#d97706";
+      if(left<=0){stop();$("dclock").style.color="#dc2626";$("dclock").textContent="끝!";try{navigator.vibrate&&navigator.vibrate(300)}catch(e){}}},1000);}
+  document.querySelectorAll("[data-sec]").forEach(b=>b.onclick=()=>start(+b.dataset.sec));
+  $("dstop").onclick=stop;
+  $("dpick").onclick=()=>{
+    let pool=T.filter(x=>kind==="any"||x.k===kind);
+    if($("dhot").checked){const hot=pool.filter(x=>x.s===3);if(hot.length)pool=hot;}
+    if(pool.length>1&&cur)pool=pool.filter(x=>x!==cur);
+    cur=pool[Math.floor(Math.random()*pool.length)];
+    const [name,cv]=KIND[cur.k];
+    $("dtag").textContent=name;$("dtag").style.setProperty("--c","var("+cv+")");
+    $("dtitle").textContent=cur.t;$("dsub").textContent=cur.d;$("dmemo").value="";
+    document.querySelectorAll("#drub input").forEach(c=>c.checked=false);
+    $("dbox").hidden=false;stop();$("dclock").textContent=cur.k==="debate"?"00:40":"30:00";$("dclock").style.color="";
+  };
+  $("dans").onclick=()=>{if(!cur)return;const i=T.indexOf(cur);const el=items[i];
+    if(el){el.hidden=false;el.open=true;el.scrollIntoView({behavior:"smooth",block:"start"});}};
+  const lg=load("nrf-drill");const log=Array.isArray(lg.a)?lg.a:[];
+  function draw(){$("dlog").innerHTML=log.length?log.slice(-10).reverse().map(r=>"<li>"+esc(r.d)+" · "+esc(r.t)+" · <b>"+r.s+"/5</b></li>").join(""):"<li>아직 기록이 없어요. 하루 2개가 목표!</li>";}
+  $("dsave").onclick=()=>{if(!cur)return;const s=[...document.querySelectorAll("#drub input")].filter(c=>c.checked).length;
+    const n=new Date();log.push({t:cur.t,s,d:(n.getMonth()+1)+"/"+n.getDate()+" "+String(n.getHours()).padStart(2,"0")+":"+String(n.getMinutes()).padStart(2,"0"),memo:$("dmemo").value.slice(0,1500)});
+    save("nrf-drill",{a:log});draw();$("dsave").textContent="저장됨 ✓";setTimeout(()=>$("dsave").textContent="기록 저장",1200);};
+  draw();
+})();
 
 const d=Math.ceil((new Date(2026,10,17)-new Date(new Date().toDateString()))/864e5);
 document.getElementById("dday").textContent=d>0?"시험까지 D-"+d:d===0?"오늘이 시험일 · 화이팅":"시험 종료";
